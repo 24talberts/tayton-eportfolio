@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tayton Alberts | Cape Town ePortfolio</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="nav-inner">
+    <span class="nav-brand">Tayton Alberts</span>
+    <ul class="nav-links">
+      <li><a href="#overview">Overview</a></li>
+      <li><a href="#reflections">Reflections</a></li>
+      <li><a href="#weekly">Weekly Lessons</a></li>
+      <li><a href="#photos">Photos</a></li>
+      <li><a href="#app">App Walkthrough</a></li>
+      <li><a href="#thanks">Thanks</a></li>
+    </ul>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="hero-inner">
+    <p class="eyebrow">UF International Scholars Program &middot; ePortfolio</p>
+    <h1>Cape Town, South Africa</h1>
+    <p class="hero-sub">Service Abroad Internship with GRIT (Gender Rights In Tech) &middot; May 30 &ndash; July 11, 2026</p>
+  </div>
+</header>
+
+<main>
+
+  <section id="overview" class="section">
+    <h2>Overview</h2>
+    <p>
+      From May 30 to July 11, 2026, I traveled to Cape Town, South Africa as part of the University of
+      Florida's International Scholars Program, participating in a service-abroad internship that pairs
+      UF students with local organizations that need technology support they couldn't otherwise access.
+    </p>
+    <p>
+      I worked with <strong>GRIT (Gender Rights In Tech)</strong>, an organization behind <strong>Zuzi</strong>,
+      an AI chatbot that provides confidential support for survivors of gender-based violence. My project was
+      the <strong>Zuzi Safeguarding Dashboard</strong>: an internal tool that lets GRIT's safeguarding team
+      review conversations flagged by an AI severity classifier, monitor risk in real time, and coordinate
+      follow-up care for survivors who may be in danger.
+    </p>
+    <p>
+      Beyond the development work, the six weeks included community visits, cultural excursions, and daily
+      life in Cape Town &mdash; all of which shaped how I think about building technology for people whose
+      circumstances are very different from my own.
+    </p>
+  </section>
+
+  <section id="reflections" class="section alt">
+    <h2>Reflection Summary</h2>
+    <div class="reflection-grid">
+      <div class="reflection-card">
+        <p class="reflection-q">If you could describe your internship experience in one word, what would it be, and why?</p>
+        <p class="reflection-a">
+          <strong>Lekker!</strong> This word is a bit of a catch-all term in Afrikaans for good, great,
+          awesome, etc.
+        </p>
+      </div>
+      <div class="reflection-card">
+        <p class="reflection-q">Which activity or experience had the greatest impact on you, and why?</p>
+        <p class="reflection-a">
+          The visit to Khayelitsha was definitely very impactful for me. Being able to walk through
+          people's homes and see, up close, the different circumstances that people live in really opened
+          my eyes to the hardships that people face.
+        </p>
+      </div>
+      <div class="reflection-card">
+        <p class="reflection-q">What skills or qualities have you developed that you will carry into your future career?</p>
+        <p class="reflection-a">
+          Technically, my skills were rapidly sharpened. Aside from my growth with software development,
+          I have gained a much larger professional confidence where I feel comfortable communicating my
+          thoughts and work.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section id="weekly" class="section">
+    <h2>Lessons Gained Each Week</h2>
+    <p class="section-note">Content coming soon &mdash; placeholders below.</p>
+    <div class="week-list">
+      <div class="week-card"><h3>Week 1 <span>May 30 &ndash; Jun 5</span></h3><p class="placeholder">Lesson coming soon.</p></div>
+      <div class="week-card"><h3>Week 2 <span>Jun 6 &ndash; Jun 12</span></h3><p class="placeholder">Lesson coming soon.</p></div>
+      <div class="week-card"><h3>Week 3 <span>Jun 13 &ndash; Jun 19</span></h3><p class="placeholder">Lesson coming soon.</p></div>
+      <div class="week-card"><h3>Week 4 <span>Jun 20 &ndash; Jun 26</span></h3><p class="placeholder">Lesson coming soon.</p></div>
+      <div class="week-card"><h3>Week 5 <span>Jun 27 &ndash; Jul 3</span></h3><p class="placeholder">Lesson coming soon.</p></div>
+      <div class="week-card"><h3>Week 6 <span>Jul 4 &ndash; Jul 11</span></h3><p class="placeholder">Lesson coming soon.</p></div>
+    </div>
+  </section>
+
+  <section id="photos" class="section alt">
+    <h2>Photos</h2>
+    <p class="section-note">Photos coming soon &mdash; placeholders below will be replaced.</p>
+    <div class="photo-grid">
+      <div class="photo-placeholder"><span>Cape Town</span></div>
+      <div class="photo-placeholder"><span>Khayelitsha</span></div>
+      <div class="photo-placeholder"><span>!Khwa ttu</span></div>
+      <div class="photo-placeholder"><span>Cape Peninsula</span></div>
+      <div class="photo-placeholder"><span>GRIT team</span></div>
+      <div class="photo-placeholder"><span>Group photo</span></div>
+    </div>
+  </section>
+
+  <section id="app" class="section">
+    <h2>App Walkthrough: Zuzi Safeguarding Dashboard</h2>
+    <p>
+      The dashboard gives GRIT's safeguarding team a real-time view into conversations between survivors
+      and Zuzi. After every exchange, an AI classifier rates the severity of the conversation
+      (low / medium / high / critical). High and critical cases trigger an email alert to the safeguarding
+      lead, and staff can review the full exchange, override the AI's severity rating if needed, and move
+      each case through a status workflow with shared team notes.
+    </p>
+    <p class="section-note">
+      Note: all data shown in these screenshots is synthetic test data generated for local development.
+      No real survivor conversations are shown, and any sensitive example messages have been blurred.
+    </p>
+
+    <div class="walkthrough">
+      <figure>
+        <img src="assets/screenshots/01-login.png" alt="Zuzi Safeguarding dashboard login screen">
+        <figcaption><strong>Staff sign-in.</strong> Access is restricted to Super Admin accounts via Firebase Authentication.</figcaption>
+      </figure>
+      <figure>
+        <img src="assets/screenshots/02-severity-logs.png" alt="Severity logs table with search, filters, and source tabs">
+        <figcaption><strong>Severity Logs.</strong> A searchable, filterable case list with color-coded severity indicators, a draggable severity range filter, and tabs to split conversations by source (WhatsApp vs. website/app).</figcaption>
+      </figure>
+      <figure>
+        <img src="assets/screenshots/03-stats.png" alt="Stats panel showing severity breakdown and case metrics">
+        <figcaption><strong>Stats panel.</strong> Aggregate analytics for the safeguarding team &mdash; severity breakdown, case status, alert rate, and how often staff manually overrode the AI's rating.</figcaption>
+      </figure>
+      <figure>
+        <img src="assets/screenshots/04-case-detail.png" alt="Case detail modal showing a conversation, classifier reasoning, and notes">
+        <figcaption><strong>Case detail.</strong> Full conversation view with the classifier's reasoning, manual severity/status override controls, and a shared notes panel for team collaboration.</figcaption>
+      </figure>
+    </div>
+
+    <p>
+      Under the hood, the dashboard is built with React and Vite, backed by Firebase (Firestore + Auth).
+      The classifier itself is a Node.js service that calls an OpenAI model (GPT-4o-mini) to score each
+      exchange, logs the result to Firestore, and sends alerts through SendGrid for serious cases.
+    </p>
+  </section>
+
+  <section id="thanks" class="section alt thanks-section">
+    <h2>Acknowledgements</h2>
+    <p>
+      Special thank you to Dr. Sanethia Thomas, Ping Neo, Naomi Harrell, EDU Africa, and
+      GRIT (Gender Rights In Tech).
+    </p>
+  </section>
+
+</main>
+
+<footer class="footer">
+  <p>Tayton Alberts &middot; UF International Scholars Program ePortfolio</p>
+</footer>
+
+</body>
+</html>
