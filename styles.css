@@ -185,15 +185,14 @@ body {
 }
 
 .carousel {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 16px;
+  max-width: 640px;
+  margin: 0 auto;
 }
 
 .carousel-viewport {
-  width: min(1000px, 84vw);
-  height: 78vh;
+  position: relative;
+  width: 100%;
+  height: min(52vh, 460px);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -213,15 +212,25 @@ body {
 }
 
 .carousel-btn {
-  flex: none;
-  width: 44px;
-  height: 44px;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 40px;
+  height: 40px;
   border-radius: 50%;
   border: none;
-  background: var(--navy);
+  background: rgba(11, 31, 58, 0.75);
   color: white;
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   cursor: pointer;
+}
+
+.carousel-btn.prev {
+  left: 10px;
+}
+
+.carousel-btn.next {
+  right: 10px;
 }
 
 .carousel-btn:hover {
