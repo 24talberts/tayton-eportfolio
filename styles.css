@@ -163,15 +163,25 @@ body {
 
 .week-list {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 16px;
 }
 
 .week-card {
   border: 1px solid var(--border);
   border-radius: 10px;
-  padding: 18px;
+  padding: 20px;
   background: white;
+}
+
+.week-card p {
+  margin: 0;
+}
+
+.week-card p.week-topic {
+  font-weight: 700;
+  color: var(--navy);
+  margin: 0 0 8px;
 }
 
 .week-card h3 {
