@@ -126,20 +126,31 @@ body {
 }
 
 .reflection-slide {
-  max-width: 480px;
+  width: 100%;
+  max-width: 560px;
+  margin: 0 auto;
   text-align: center;
 }
 
 .reflection-q {
-  font-weight: 700;
+  font-weight: 800;
   color: var(--navy);
-  margin: 0 0 16px;
-  font-size: 1.25rem;
+  margin: 0 0 22px;
+  font-size: 1.75rem;
+  line-height: 1.3;
+  letter-spacing: -0.01em;
 }
 
 .reflection-a {
   margin: 0;
   color: var(--text);
+  font-size: 1.3rem;
+  line-height: 1.6;
+}
+
+.reflection-a strong {
+  color: var(--gold);
+  font-weight: 800;
 }
 
 .week-list {
@@ -205,8 +216,8 @@ body {
 
 .carousel-viewport.text-viewport {
   height: auto;
-  min-height: 260px;
-  padding: 40px;
+  min-height: 340px;
+  padding: 56px 64px;
 }
 
 .carousel-btn {

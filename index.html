@@ -171,7 +171,7 @@
   const reflections = [
     {
       question: "If you could describe your internship experience in one word, what would it be, and why?",
-      answer: "Lekker! This word is a bit of a catch-all term in Afrikaans for good, great, awesome, etc."
+      answer: "<strong>Lekker!</strong> This word is a bit of a catch-all term in Afrikaans for good, great, awesome, etc."
     },
     {
       question: "Which activity or experience had the greatest impact on you, and why?",
@@ -191,7 +191,7 @@
   function showReflection(i) {
     reflectionIndex = (i + reflections.length) % reflections.length;
     reflectionQuestion.textContent = reflections[reflectionIndex].question;
-    reflectionAnswer.textContent = reflections[reflectionIndex].answer;
+    reflectionAnswer.innerHTML = reflections[reflectionIndex].answer;
     reflectionCounter.textContent = (reflectionIndex + 1) + ' / ' + reflections.length;
   }
 
