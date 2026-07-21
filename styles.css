@@ -135,10 +135,6 @@ body {
   transition: transform 0.4s ease;
 }
 
-.banner-france .banner-bg {
-  background-image: linear-gradient(135deg, var(--navy) 0%, var(--navy-light) 100%);
-}
-
 .banner-overlay {
   position: absolute;
   inset: 0;
@@ -463,4 +459,39 @@ body {
   padding: 24px;
   color: var(--muted);
   font-size: 0.85rem;
+}
+
+.hero.france-hero {
+  background:
+    linear-gradient(180deg, rgba(11, 31, 58, 0.55) 0%, rgba(11, 31, 58, 0.75) 100%),
+    url("assets/photos/eiffel-tower-bg.jpg");
+  background-size: cover;
+  background-position: center;
+}
+
+.section.france-reflection-bg {
+  background:
+    linear-gradient(180deg, rgba(11, 31, 58, 0.55) 0%, rgba(11, 31, 58, 0.7) 100%),
+    url("assets/photos/mont-saint-michel-bg.jpg");
+  background-size: cover;
+  background-position: center;
+  color: white;
+  padding-top: 90px;
+  padding-bottom: 90px;
+}
+
+.section.france-reflection-bg h2 {
+  color: white;
+}
+
+.section.france-reflection-bg p {
+  color: #d7dde7;
+}
+
+.section.thanks-section.france-thanks-bg {
+  background:
+    linear-gradient(180deg, rgba(11, 31, 58, 0.7) 0%, rgba(11, 31, 58, 0.85) 100%),
+    url("assets/photos/belgium-courtyard-bg.jpg");
+  background-size: cover;
+  background-position: center;
 }
