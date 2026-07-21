@@ -403,14 +403,18 @@ body {
 
 .section.thanks-section {
   text-align: center;
+  background: var(--navy);
+  color: white;
+  padding-top: 100px;
+  padding-bottom: 100px;
+}
+
+.section.thanks-section.has-bg-photo {
   background:
     linear-gradient(180deg, rgba(11, 31, 58, 0.7) 0%, rgba(11, 31, 58, 0.85) 100%),
     url("assets/photos/thanks-bg.jpg");
   background-size: cover;
   background-position: center;
-  color: white;
-  padding-top: 100px;
-  padding-bottom: 100px;
 }
 
 .section.thanks-section h2 {
