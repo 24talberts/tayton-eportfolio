@@ -117,6 +117,20 @@ body {
   margin-right: auto;
 }
 
+.section.weekly-section {
+  background:
+    linear-gradient(180deg, rgba(11, 31, 58, 0.55) 0%, rgba(11, 31, 58, 0.7) 100%),
+    url("assets/photos/weekly-bg.jpg");
+  background-size: cover;
+  background-position: center;
+  padding-top: 90px;
+  padding-bottom: 90px;
+}
+
+.section.weekly-section h2 {
+  color: white;
+}
+
 .section h2 {
   font-size: 1.7rem;
   margin: 0 0 24px;
@@ -179,8 +193,8 @@ body {
 }
 
 .week-card p.week-topic {
-  font-weight: 700;
-  color: var(--navy);
+  font-weight: 800;
+  color: var(--gold);
   margin: 0 0 8px;
 }
 
