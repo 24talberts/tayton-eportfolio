@@ -61,12 +61,13 @@
   <section id="photos" class="section alt">
     <h2>Photos</h2>
     <div class="carousel">
-      <div class="carousel-viewport text-viewport">
-        <div class="reflection-slide">
-          <p class="placeholder">Photos coming soon.</p>
-        </div>
+      <div class="carousel-viewport">
+        <img id="carousel-image" src="assets/photos/france/IMG_7714.jpg" alt="Trip photo">
+        <button class="carousel-btn prev" type="button" aria-label="Previous photo">&larr;</button>
+        <button class="carousel-btn next" type="button" aria-label="Next photo">&rarr;</button>
       </div>
     </div>
+    <p class="carousel-counter"><span id="carousel-counter">1 / 14</span></p>
   </section>
 
   <section id="app" class="section">
@@ -84,6 +85,35 @@
 <footer class="footer">
   <p>Tayton Alberts &middot; ePortfolio</p>
 </footer>
+
+<script>
+  const photos = [
+    'IMG_7714.jpg', 'IMG_7096.jpg', 'IMG_7109.jpg', 'IMG_7110.jpg', 'IMG_7140.jpg',
+    'IMG_7376.jpg', 'IMG_7414.jpg', 'IMG_7453.jpg', 'IMG_7460.jpg', 'IMG_7695.jpg',
+    'IMG_7761.jpg', 'IMG_7766.jpg', 'IMG_7772.jpg', 'IMG_7794.jpg'
+  ];
+  let photoIndex = 0;
+  const carouselImage = document.getElementById('carousel-image');
+  const carouselCounter = document.getElementById('carousel-counter');
+  const photosSection = document.getElementById('photos');
+
+  function showPhoto(i) {
+    photoIndex = (i + photos.length) % photos.length;
+    carouselImage.src = 'assets/photos/france/' + photos[photoIndex];
+    carouselCounter.textContent = (photoIndex + 1) + ' / ' + photos.length;
+  }
+
+  photosSection.querySelector('.carousel-btn.prev').addEventListener('click', () => showPhoto(photoIndex - 1));
+  photosSection.querySelector('.carousel-btn.next').addEventListener('click', () => showPhoto(photoIndex + 1));
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key !== 'ArrowLeft' && e.key !== 'ArrowRight') return;
+    const r = photosSection.getBoundingClientRect();
+    if (r.top < window.innerHeight && r.bottom > 0) {
+      showPhoto(photoIndex + (e.key === 'ArrowLeft' ? -1 : 1));
+    }
+  });
+</script>
 
 </body>
 </html>
