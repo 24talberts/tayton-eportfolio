@@ -13,10 +13,9 @@
     <a href="index.html" class="nav-brand">Tayton Alberts</a>
     <ul class="nav-links">
       <li><a href="#overview">Overview</a></li>
-      <li><a href="#reflections">Reflections</a></li>
-      <li><a href="#weekly">Weekly Lessons</a></li>
+      <li><a href="#reflections">Reflection</a></li>
       <li><a href="#photos">Photos</a></li>
-      <li><a href="#app">Project Walkthrough</a></li>
+      <li><a href="#app">Artwork Showcase</a></li>
       <li><a href="#thanks">Thanks</a></li>
     </ul>
   </div>
@@ -38,31 +37,8 @@
   </section>
 
   <section id="reflections" class="section alt">
-    <h2>Reflection Summary</h2>
-    <div class="carousel">
-      <div class="carousel-viewport text-viewport">
-        <div class="reflection-slide">
-          <h3 id="reflection-question" class="reflection-q"></h3>
-          <p id="reflection-answer" class="reflection-a"></p>
-        </div>
-        <button class="carousel-btn prev" type="button" aria-label="Previous reflection">&larr;</button>
-        <button class="carousel-btn next" type="button" aria-label="Next reflection">&rarr;</button>
-      </div>
-    </div>
-    <p class="carousel-counter"><span id="reflection-counter">1 / 1</span></p>
-  </section>
-
-  <section id="weekly" class="section alt">
-    <h2>Lessons Gained Each Week</h2>
-    <p class="section-note">Content coming soon.</p>
-    <div class="week-list">
-      <div class="week-card"><h3>Week 1</h3><p class="placeholder">Lesson coming soon.</p></div>
-      <div class="week-card"><h3>Week 2</h3><p class="placeholder">Lesson coming soon.</p></div>
-      <div class="week-card"><h3>Week 3</h3><p class="placeholder">Lesson coming soon.</p></div>
-      <div class="week-card"><h3>Week 4</h3><p class="placeholder">Lesson coming soon.</p></div>
-      <div class="week-card"><h3>Week 5</h3><p class="placeholder">Lesson coming soon.</p></div>
-      <div class="week-card"><h3>Week 6</h3><p class="placeholder">Lesson coming soon.</p></div>
-    </div>
+    <h2>Reflection</h2>
+    <p class="placeholder">Content coming soon.</p>
   </section>
 
   <section id="photos" class="section alt">
@@ -77,7 +53,7 @@
   </section>
 
   <section id="app" class="section">
-    <h2>Project Walkthrough</h2>
+    <h2>Artwork Showcase</h2>
     <p class="placeholder">Content coming soon.</p>
   </section>
 
@@ -91,31 +67,6 @@
 <footer class="footer">
   <p>Tayton Alberts &middot; ePortfolio</p>
 </footer>
-
-<script>
-  const reflections = [
-    {
-      question: "Reflections coming soon.",
-      answer: "Check back once this page is filled in."
-    }
-  ];
-  let reflectionIndex = 0;
-  const reflectionQuestion = document.getElementById('reflection-question');
-  const reflectionAnswer = document.getElementById('reflection-answer');
-  const reflectionCounter = document.getElementById('reflection-counter');
-  const reflectionsSection = document.getElementById('reflections');
-
-  function showReflection(i) {
-    reflectionIndex = (i + reflections.length) % reflections.length;
-    reflectionQuestion.textContent = reflections[reflectionIndex].question;
-    reflectionAnswer.innerHTML = reflections[reflectionIndex].answer;
-    reflectionCounter.textContent = (reflectionIndex + 1) + ' / ' + reflections.length;
-  }
-
-  reflectionsSection.querySelector('.carousel-btn.prev').addEventListener('click', () => showReflection(reflectionIndex - 1));
-  reflectionsSection.querySelector('.carousel-btn.next').addEventListener('click', () => showReflection(reflectionIndex + 1));
-  showReflection(0);
-</script>
 
 </body>
 </html>
