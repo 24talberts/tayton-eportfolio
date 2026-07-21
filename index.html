@@ -55,31 +55,17 @@
 
   <section id="reflections" class="section alt">
     <h2>Reflection Summary</h2>
-    <div class="reflection-grid">
-      <div class="reflection-card">
-        <p class="reflection-q">If you could describe your internship experience in one word, what would it be, and why?</p>
-        <p class="reflection-a">
-          <strong>Lekker!</strong> This word is a bit of a catch-all term in Afrikaans for good, great,
-          awesome, etc.
-        </p>
-      </div>
-      <div class="reflection-card">
-        <p class="reflection-q">Which activity or experience had the greatest impact on you, and why?</p>
-        <p class="reflection-a">
-          The visit to Khayelitsha was definitely very impactful for me. Being able to walk through
-          people's homes and see, up close, the different circumstances that people live in really opened
-          my eyes to the hardships that people face.
-        </p>
-      </div>
-      <div class="reflection-card">
-        <p class="reflection-q">What skills or qualities have you developed that you will carry into your future career?</p>
-        <p class="reflection-a">
-          Technically, my skills were rapidly sharpened. Aside from my growth with software development,
-          I have gained a much larger professional confidence where I feel comfortable communicating my
-          thoughts and work.
-        </p>
+    <div class="carousel">
+      <div class="carousel-viewport text-viewport">
+        <div class="reflection-slide">
+          <h3 id="reflection-question" class="reflection-q"></h3>
+          <p id="reflection-answer" class="reflection-a"></p>
+        </div>
+        <button class="carousel-btn prev" type="button" aria-label="Previous reflection">&larr;</button>
+        <button class="carousel-btn next" type="button" aria-label="Next reflection">&rarr;</button>
       </div>
     </div>
+    <p class="carousel-counter"><span id="reflection-counter">1 / 3</span></p>
   </section>
 
   <section id="weekly" class="section">
@@ -171,6 +157,7 @@
   let photoIndex = 0;
   const carouselImage = document.getElementById('carousel-image');
   const carouselCounter = document.getElementById('carousel-counter');
+  const photosSection = document.getElementById('photos');
 
   function showPhoto(i) {
     photoIndex = (i + photos.length) % photos.length;
@@ -178,11 +165,50 @@
     carouselCounter.textContent = (photoIndex + 1) + ' / ' + photos.length;
   }
 
-  document.querySelector('.carousel-btn.prev').addEventListener('click', () => showPhoto(photoIndex - 1));
-  document.querySelector('.carousel-btn.next').addEventListener('click', () => showPhoto(photoIndex + 1));
+  photosSection.querySelector('.carousel-btn.prev').addEventListener('click', () => showPhoto(photoIndex - 1));
+  photosSection.querySelector('.carousel-btn.next').addEventListener('click', () => showPhoto(photoIndex + 1));
+
+  const reflections = [
+    {
+      question: "If you could describe your internship experience in one word, what would it be, and why?",
+      answer: "Lekker! This word is a bit of a catch-all term in Afrikaans for good, great, awesome, etc."
+    },
+    {
+      question: "Which activity or experience had the greatest impact on you, and why?",
+      answer: "The visit to Khayelitsha was definitely very impactful for me. Being able to walk through people's homes and see, up close, the different circumstances that people live in really opened my eyes to the hardships that people face."
+    },
+    {
+      question: "What skills or qualities have you developed that you will carry into your future career?",
+      answer: "Technically, my skills were rapidly sharpened. Aside from my growth with software development, I have gained a much larger professional confidence where I feel comfortable communicating my thoughts and work."
+    }
+  ];
+  let reflectionIndex = 0;
+  const reflectionQuestion = document.getElementById('reflection-question');
+  const reflectionAnswer = document.getElementById('reflection-answer');
+  const reflectionCounter = document.getElementById('reflection-counter');
+  const reflectionsSection = document.getElementById('reflections');
+
+  function showReflection(i) {
+    reflectionIndex = (i + reflections.length) % reflections.length;
+    reflectionQuestion.textContent = reflections[reflectionIndex].question;
+    reflectionAnswer.textContent = reflections[reflectionIndex].answer;
+    reflectionCounter.textContent = (reflectionIndex + 1) + ' / ' + reflections.length;
+  }
+
+  reflectionsSection.querySelector('.carousel-btn.prev').addEventListener('click', () => showReflection(reflectionIndex - 1));
+  reflectionsSection.querySelector('.carousel-btn.next').addEventListener('click', () => showReflection(reflectionIndex + 1));
+  showReflection(0);
+
+  function isInViewport(el) {
+    const r = el.getBoundingClientRect();
+    return r.top < window.innerHeight && r.bottom > 0;
+  }
+
   document.addEventListener('keydown', (e) => {
-    if (e.key === 'ArrowLeft') showPhoto(photoIndex - 1);
-    if (e.key === 'ArrowRight') showPhoto(photoIndex + 1);
+    if (e.key !== 'ArrowLeft' && e.key !== 'ArrowRight') return;
+    const delta = e.key === 'ArrowLeft' ? -1 : 1;
+    if (isInViewport(photosSection)) showPhoto(photoIndex + delta);
+    else if (isInViewport(reflectionsSection)) showReflection(reflectionIndex + delta);
   });
 </script>
 

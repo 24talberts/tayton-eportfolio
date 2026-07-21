@@ -125,24 +125,16 @@ body {
   font-style: italic;
 }
 
-.reflection-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-  gap: 20px;
-}
-
-.reflection-card {
-  background: var(--cream);
-  border: 1px solid var(--border);
-  border-radius: 10px;
-  padding: 20px;
+.reflection-slide {
+  max-width: 480px;
+  text-align: center;
 }
 
 .reflection-q {
-  font-weight: 600;
+  font-weight: 700;
   color: var(--navy);
-  margin: 0 0 10px;
-  font-size: 0.95rem;
+  margin: 0 0 16px;
+  font-size: 1.25rem;
 }
 
 .reflection-a {
@@ -209,6 +201,12 @@ body {
   height: auto;
   object-fit: contain;
   display: block;
+}
+
+.carousel-viewport.text-viewport {
+  height: auto;
+  min-height: 260px;
+  padding: 40px;
 }
 
 .carousel-btn {
