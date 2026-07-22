@@ -232,6 +232,10 @@ body {
   font-style: italic;
 }
 
+.section-note.center-note {
+  text-align: center;
+}
+
 .reflection-slide {
   width: 100%;
   max-width: 560px;
