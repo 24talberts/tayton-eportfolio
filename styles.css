@@ -397,29 +397,6 @@ body {
   color: var(--muted);
 }
 
-.artwork-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-  gap: 16px;
-  margin: 20px 0;
-}
-
-.artwork-grid figure {
-  margin: 0;
-  background: white;
-  border: 1px solid var(--border);
-  border-radius: 10px;
-  overflow: hidden;
-}
-
-.artwork-grid img {
-  width: 100%;
-  aspect-ratio: 4 / 3;
-  object-fit: contain;
-  background: var(--cream);
-  display: block;
-}
-
 .section.thanks-section {
   text-align: center;
   background: var(--navy);

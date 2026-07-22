@@ -91,23 +91,14 @@
 
     <p class="section-note">A few highlights from the sketches and studies completed throughout the course.</p>
 
-    <div class="artwork-grid">
-      <figure>
-        <img src="assets/photos/france-art/IMG_7227.jpg" alt="Pencil still life of a bottle, bag, and garlic press">
-      </figure>
-      <figure>
-        <img src="assets/photos/france-art/IMG_7228.jpg" alt="Abstract geometric pencil study">
-      </figure>
-      <figure>
-        <img src="assets/photos/france-art/IMG_7619.jpg" alt="Pencil drawing of a parked car and garden fireplace">
-      </figure>
-      <figure>
-        <img src="assets/photos/france-art/IMG_7631.jpg" alt="Pencil drawing of a car with graffiti lettering">
-      </figure>
-      <figure>
-        <img src="assets/photos/france-art/IMG_7632.jpg" alt="Abstract architectural pencil study">
-      </figure>
+    <div class="carousel">
+      <div class="carousel-viewport">
+        <img id="artwork-carousel-image" src="assets/photos/france-art/IMG_7227.jpg" alt="Sketch from the Engineering Art course">
+        <button class="carousel-btn prev" type="button" aria-label="Previous sketch">&larr;</button>
+        <button class="carousel-btn next" type="button" aria-label="Next sketch">&rarr;</button>
+      </div>
     </div>
+    <p class="carousel-counter"><span id="artwork-carousel-counter">1 / 5</span></p>
   </section>
 
   <section id="thanks" class="section alt thanks-section france-thanks-bg">
@@ -143,11 +134,32 @@
   photosSection.querySelector('.carousel-btn.prev').addEventListener('click', () => showPhoto(photoIndex - 1));
   photosSection.querySelector('.carousel-btn.next').addEventListener('click', () => showPhoto(photoIndex + 1));
 
+  const artworkSketches = [
+    'IMG_7227.jpg', 'IMG_7228.jpg', 'IMG_7619.jpg', 'IMG_7631.jpg', 'IMG_7632.jpg'
+  ];
+  let artworkIndex = 0;
+  const artworkImage = document.getElementById('artwork-carousel-image');
+  const artworkCounter = document.getElementById('artwork-carousel-counter');
+  const artworkSection = document.getElementById('app');
+
+  function showArtwork(i) {
+    artworkIndex = (i + artworkSketches.length) % artworkSketches.length;
+    artworkImage.src = 'assets/photos/france-art/' + artworkSketches[artworkIndex];
+    artworkCounter.textContent = (artworkIndex + 1) + ' / ' + artworkSketches.length;
+  }
+
+  artworkSection.querySelector('.carousel-btn.prev').addEventListener('click', () => showArtwork(artworkIndex - 1));
+  artworkSection.querySelector('.carousel-btn.next').addEventListener('click', () => showArtwork(artworkIndex + 1));
+
   document.addEventListener('keydown', (e) => {
     if (e.key !== 'ArrowLeft' && e.key !== 'ArrowRight') return;
-    const r = photosSection.getBoundingClientRect();
-    if (r.top < window.innerHeight && r.bottom > 0) {
-      showPhoto(photoIndex + (e.key === 'ArrowLeft' ? -1 : 1));
+    const delta = e.key === 'ArrowLeft' ? -1 : 1;
+    const photosRect = photosSection.getBoundingClientRect();
+    const artworkRect = artworkSection.getBoundingClientRect();
+    if (photosRect.top < window.innerHeight && photosRect.bottom > 0) {
+      showPhoto(photoIndex + delta);
+    } else if (artworkRect.top < window.innerHeight && artworkRect.bottom > 0) {
+      showArtwork(artworkIndex + delta);
     }
   });
 </script>
