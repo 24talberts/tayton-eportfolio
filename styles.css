@@ -418,13 +418,6 @@ body {
   object-fit: contain;
   background: var(--cream);
   display: block;
-  border-bottom: 1px solid var(--border);
-}
-
-.artwork-grid figcaption {
-  padding: 10px 12px;
-  font-size: 0.85rem;
-  color: var(--muted);
 }
 
 .section.thanks-section {
