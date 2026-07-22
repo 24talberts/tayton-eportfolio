@@ -108,10 +108,54 @@ body {
   padding: 90px 24px;
 }
 
+.hero.about-hero {
+  text-align: left;
+  min-height: auto;
+  padding: 90px 24px;
+}
+
+.hero.about-hero .about-grid {
+  width: 100%;
+  max-width: 1000px;
+}
+
+.hero.about-hero .eyebrow {
+  margin-bottom: 10px;
+}
+
+.hero.about-hero h1 {
+  margin-bottom: 6px;
+}
+
+.hero.about-hero .hero-sub {
+  margin-bottom: 20px;
+}
+
+.hero.about-hero .about-text p:not(.eyebrow):not(.hero-sub) {
+  color: #d7dde7;
+}
+
+.hero.about-hero .about-text strong {
+  color: white;
+  font-weight: 800;
+}
+
+.banner-section h2 {
+  text-align: center;
+  font-size: 2.4rem;
+  font-weight: 800;
+  margin-bottom: 36px;
+}
+
+.section.alt .banner {
+  max-width: none;
+  width: 100%;
+}
+
 .banner {
   display: flex;
   gap: 2px;
-  height: 420px;
+  height: min(60vh, 520px);
   border-radius: 10px;
   overflow: hidden;
   background: var(--navy);
@@ -159,17 +203,17 @@ body {
 }
 
 .banner-text p.banner-year {
-  font-size: 1.6rem;
+  font-size: 2.1rem;
   font-weight: 800;
   color: var(--gold);
-  margin: 0 0 10px;
+  margin: 0 0 12px;
 }
 
 .banner-text p.banner-desc {
-  font-size: 1.05rem;
+  font-size: 1.25rem;
   margin: 0;
   color: white;
-  max-width: 280px;
+  max-width: 360px;
   margin-left: auto;
   margin-right: auto;
 }
@@ -481,7 +525,7 @@ body {
   width: 100%;
   display: block;
   border-radius: 14px;
-  border: 1px solid var(--border);
+  border: 1px solid rgba(255, 255, 255, 0.25);
 }
 
 .about-text h3 {
@@ -500,27 +544,28 @@ body {
   display: inline-block;
   padding: 10px 22px;
   border-radius: 8px;
-  background: var(--navy);
-  color: white;
+  background: var(--gold);
+  color: var(--navy);
   text-decoration: none;
-  font-weight: 600;
+  font-weight: 700;
   font-size: 0.9rem;
-  border: 1px solid var(--navy);
+  border: 1px solid var(--gold);
 }
 
 .btn-link:hover {
-  background: var(--navy-light);
-  border-color: var(--navy-light);
+  background: #b8890f;
+  border-color: #b8890f;
 }
 
 .btn-link-outline {
   background: transparent;
-  color: var(--navy);
+  color: white;
+  border-color: white;
 }
 
 .btn-link-outline:hover {
-  background: var(--navy);
-  color: white;
+  background: white;
+  color: var(--navy);
 }
 
 @media (max-width: 700px) {
